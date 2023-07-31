@@ -1,0 +1,82 @@
+*** CSS 적용하는 방법
+1) 내부 스타일 시트
+   <style> ~ </style> 스타일 명령 삽입
+   p {
+      color : skyblue;
+   }
+
+2) 외부 스타일 시트
+   <link rel="stylesheet" href="mystyle.css"> 
+  : 외부 파일(*.css)를 현재 HTML 문서에 스타일 적용
+ 
+   mystyle.css
+   p {
+      color : skyblue;
+   }
+
+3) 인라인 스타일 시트
+   태그에 직접 적용하는 방법 
+   예]
+   <p style="color:red;"> Hello, World </p>  
+   <p style="color:blue;"> Hello, World </p>     
+
+*** 선택자(selector)
+
+* : 전체 선택자
+태그 선택자 : 태그명 그자체
+.클래스명
+#아이디명
+h1, {
+    color:red;
+}
+
+
+<a  href="http://google.com" class="sample">
+
+<p class="test sample btn exam">~~</p>
+
+<div class="test" id="myid" >~~</div>
+
+
+예)
+p { color :red; }
+...
+...
+p { color :blue; }
+   
+
+*** 색상 지정방식
+16 진수 : 
+#FFFFFF; ==> #FFF
+#000000;
+#999999;
+
+10진수 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

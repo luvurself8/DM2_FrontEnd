@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            border: 1px dashed #aaa;
+            padding: 10px;
+        }
+
+        .sibling {
+            background-color: skyblue;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .second {
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+        }
+
+        .static {
+            position: static;
+            top: 20px;
+            left: 20px;
+        }
+
+        .relative {
+            position: relative;
+            top: 20px;
+            left: 20px;
+        }
+
+        .absolute {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+
+        .fixed {
+            position: fixed;
+            top: 50px;
+            right: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>POSITION</h1>
+    <h2>Static(default)</h2>
+    <div class="parent">
+        <div class="sibling">First</div>
+        <div class="second static">Second</div>
+        <div class="sibling">Third</div>
+    </div>
+
+    <h2>Relative</h2>
+    <div class="parent">
+        <div class="sibling">First</div>
+        <div class="second relative">Second</div>
+        <div class="sibling">Third</div>
+    </div>
+
+    <h2>Absolute</h2>
+    <div class="parent">
+        <div class="sibling">First</div>
+        <div class="second absolute">Second</div>
+        <div class="sibling">Third</div>
+    </div>
+
+    <h2>Fixed</h2>
+    <div class="parent">
+        <div class="sibling">First</div>
+        <div class="second fixed">Fixed</div>
+        <div class="sibling">Third</div>
+    </div>
+</body>
+
+</html>

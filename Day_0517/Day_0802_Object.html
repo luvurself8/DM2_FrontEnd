@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="target">목록</p>
+
+    <script>
+        let recvObj = [
+            { name: '손오공', age: 25 },
+            { name: '홍길동', age: 30 },
+            { name: '저팔계', age: 31 }];
+        let target = document.getElementById('target');
+
+        // 1번 방법
+        let data = '';
+        for (const item of recvObj) {
+            data += `${item["name"]}, ${item["age"]} <br>`;
+        }
+        target.innerHTML = data;
+
+        // 2번째 방법
+        let obj = { name: '사오정', age: 33 };
+        let temp = `${obj["name"]}, ${obj["age"]}`;
+        target = document.getElementById('target');
+        target.append(temp);  // 마지막 자식으로 붙일 때
+
+        target = document.getElementById('target');
+        target.prepend(temp); // 첫번째 자식으로 붙일 때
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const myFunc = function () {
+            let pay = 100;
+            let department = '총무부';
+
+            return [pay, department];  // 여러 개를 반환하는 것은 안되고, 묶어서 반환해야함
+        }
+
+        const [data1, data2] = myFunc(); // 각각 받음
+        console.log(data1, data2);
+
+        // 가변인자 함수
+        function yourFunc(a, b) {
+            console.log(`전달된 데이터 : ${arguments.length}`); // 함수의 내부에 자동으로 생성되는 속성(배열)
+            console.log(a, b);
+        }
+
+        yourFunc();
+        yourFunc(1);
+        yourFunc(1, 2);
+        yourFunc(1, 2, 3);
+
+        // 나머지 연산자 : 함수의 전달인자 위치에서 사용
+        function hisFunc(a, b, ...remain) { // 배열로 나머지 데이터를 받음
+            console.log(a, b);
+            console.log(remain.length);
+            console.log(remain);
+        }
+
+        hisFunc(10, 20, 30, 40, 50)
+
+
+        // 디폴트 파라미터 지정하기
+        function herFunc(a, b, c = 50) { // 배열로 나머지 데이터를 받음
+            console.log(a, b, c);
+        }
+        herFunc(10, 20);
+        herFunc(10, 20, 30);
+
+        // 함수를 전달하거나 반환
+        function callFunc(otherFunc) {
+            otherFunc();
+        }
+
+        callFunc(herFunc);
+        callFunc(function () {
+            console.log('Hello');
+        });
+
+
+        function theirFunc() {
+            console.log("*");
+        }
+        theirFunc();
+
+        // setInterval(함수, 밀리세컨), setTimeout(함수, 밀리세컨)
+        let clock = setInterval(function () {
+            console.log("#");
+        }, 1000);
+        clearInterval(clock);
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="images/1.png" alt="첫 번째 그림">
+    <script>
+        // 배열에 그림명을 전부 넣어 놓는다.
+        let imgName = ["images/1.png", "images/2.png", "images/3.png", "images/4.png", "images/5.png"];
+        let num = 1;
+        let image = document.getElementsByTagName("img")[0];
+
+        setInterval(function () {
+            image.setAttribute("src", imgName[num++]);
+            if (num >= imgName.length) num = 0;
+        }, 1000);
+    </script>
+</body>
+
+</html>

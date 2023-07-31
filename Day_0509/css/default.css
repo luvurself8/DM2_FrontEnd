@@ -1,0 +1,19 @@
+body {
+    background-image: url(../images/background.jpg);
+}
+img {
+    width:200px;
+}
+a, a:link, a:visited  {
+    text-decoration: none;
+    color:cadetblue;
+}
+a:hover {
+    font-weight : bold;
+    color:azure;
+    background-color: cornflowerblue;
+}
+ a:active {
+    background-color: rgb(250, 192, 148);
+    color: red;
+}

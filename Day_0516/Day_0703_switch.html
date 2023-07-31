@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>오늘은 무슨요일??</h2>
+    <input type="button" id="btn" value="클릭해보시오">
+    <p id="today"></p>
+
+
+    <script>
+        let mydate = document.getElementById("today");
+
+        let btn = document.getElementById("btn").addEventListener('click', function () {
+            let today = new Date();
+            let day = today.getDay()
+
+            switch (day) {
+                case 0: mydate.innerHTML = "일요일!"; break;
+                case 1: mydate.innerHTML = "월요일!"; break;
+                case 2: mydate.innerHTML = "화요일!"; break;
+                case 3: mydate.innerHTML = "수요일!"; break;
+                case 4: mydate.innerHTML = "목요일!"; break;
+                case 5: mydate.innerHTML = "금요일!"; break;
+                case 6: mydate.innerHTML = "토요일!"; break;
+            }
+        });
+    </script>
+</body>
+
+</html>

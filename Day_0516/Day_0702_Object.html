@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // JS의 데이터의 종류
+        // 1) Primitive 타입 : number, boolean
+        // 2) Reference 타입 : string, object(배열, 객체)
+        // 3) function 타입 : 함수
+
+        function myFunc() {
+            return 10 + 20;
+        }
+        console.log(myFunc);
+        console.log(myFunc());
+        console.log(typeof myFunc);
+
+
+        // 1) [], {} 
+        let ary = [2, 4, 6, 8, 10];
+        let total1 = 0;
+
+        for (let i = 0; i < ary.length; ++i) {
+            total1 += ary[i];
+        }
+        console.log(`합계: ${total1}`);
+
+        let total2 = 0;
+        for (let i in ary) {   // i는 첨자를 의미함
+            total2 += ary[i];
+        }
+        console.log(`합계: ${total2}`);
+        let total3 = 0;
+        for (let data of ary) {   // data는 데이터를 의미함
+            total3 += data;
+        }
+        console.log(`합계: ${total3}`);
+
+        //---------
+        let ary1 = ['Java', 'DB', ['HTML', 'CSS', 'Javascript']]
+        let java = ary1[0];
+        console.log(java);
+
+        console.log(typeof ary1[2]);  // object
+
+        // 2번방의 데이터를 꺼내는 방법 : Legarcy한 방법
+        let html = ary1[2][0];
+        let css = ary1[2][1];
+        let js = ary1[2][2];
+        console.log(html, css, js)
+
+        // 2번방의 데이터를 꺼내는 방법 : ES6버전
+        let [h, c, j] = ary1[2];
+        console.log(h, c, j);
+
+        //********************
+        let obj = { name: '홍길동', age: 25, gender: '남자' };
+        console.log(obj['name'])
+        console.log(obj.age);
+        console.log(typeof obj); // Object
+
+        //********************
+        let json = { "name": '홍길동', "age": 25, "gender": '남자' };
+        console.log(json['name'])
+        console.log(json.age);
+
+
+    // 2) HTML 객체
+
+    </script>
+</body>
+
+</html>

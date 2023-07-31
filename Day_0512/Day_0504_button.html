@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.btnGroup>input {
+            width: 150px;
+            padding: 10px;
+            border-radius: 80px;
+            font-weight: bold;
+            border: none;
+            background-color: #f7f7f7;
+            color: #ccc;
+        }
+
+        div.btnGroup>input:hover {
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        div.btnGroup>input.signup {
+            color: #fff;
+        }
+
+        div.btnGroup>input.signup {
+            background: linear-gradient(45deg, rgba(78, 197, 217, 1) 0%, rgba(38, 59, 151, 1) 100%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="btnGroup">
+        <input type="button" class="signup" value="SIGN UP">
+        <input type="button" value="SIGN IN">
+    </div>
+</body>
+
+</html>

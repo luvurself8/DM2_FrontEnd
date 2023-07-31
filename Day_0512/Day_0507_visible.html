@@ -1,0 +1,99 @@
+<!--
+Position
+- element를 어느 위치에 배치할 것인지를 결정하는 속성
+
+- 값의종류
+  static(기본값)
+     - 기준 : 엘리먼트의 원점
+     - position을 적용하지 않을 때의 기본값
+     - top, left 등의 값을 이용해 이동불가능
+
+  relative(상대위치)
+     - 기준 : 엘리먼트의 원점
+     - 위, 아래 형제 엘리먼트는 영향을 받지 않는다.
+     - top, left 등의 값을 이용해 이동가능
+
+  absolute(절대위치)
+     - 기준 : 문서의 원점
+     - 아래 형제 엘리먼트는 영향을 받는다. 
+       (레이어를 형성한다.)
+     - top, left 등의 값을 이용해 이동가능
+
+  fixed
+     - 기준 : 스크린이 기준
+     - 아래 형제 엘리먼트는 영향을 받는다. 
+       (레이어를 형성한다.)
+     - top, left, bottom, right 등의 값을 이용해 이동가능
+
+
+
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.content {
+            border: 1px dotted black;
+            padding: 0px;
+        }
+
+        div.box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid lightgray;
+            background-color: cornflowerblue;
+        }
+
+        div.box:nth-child(1) {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 4;
+            background-color: rgb(241, 9, 179);
+        }
+
+        div.box:nth-child(2) {
+            position: absolute;
+            top: 10px;
+            left: 80px;
+            z-index: 2;
+            background-color: yellowgreen;
+        }
+
+        div.box:nth-child(3) {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            z-index: 3;
+            background-color: plum;
+        }
+
+        div.box:nth-child(4) {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            z-index: 3;
+            background-color: rgb(249, 88, 63);
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="content">
+        <div class="box">One</div>
+        <div class="box">Two</div>
+        <div class="box">Three</div>
+        <div class="box">Four</div>
+    </div>
+
+</body>
+
+</html>

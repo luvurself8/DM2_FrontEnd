@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label>키는?
+        <input type="text">
+    </label>
+    <span id="result"> </span><br><br>
+    <input id="btn" type="button" value="적정체중구하기">
+
+    <script>
+        /* 적정 체중 구하기 */
+        document.getElementById("btn").addEventListener('click', function () {
+            let height = document.getElementsByTagName("input")[0].value;
+            let weight = (height - 100) * 0.9;
+            document.getElementById("result").innerText = weight + "Kg";
+        });
+    </script>
+</body>
+
+</html>

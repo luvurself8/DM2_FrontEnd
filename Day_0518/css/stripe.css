@@ -1,0 +1,33 @@
+body {
+    font-family: "맑은 고딕", sans-serif;
+    background-color: #fff;
+    color : #000;
+}
+table {
+    margin : 0 auto;
+    border : 1px solid #699;
+}
+caption {
+    padding : 0.5em;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+th {
+    font-weight: normal;
+    font-style: italic;
+    text-align: left;
+    border: 1px dotted #699;
+    background-color: #9cc;
+    color : #000;
+}
+th.duration {
+    width: 200px;
+    padding : 10px;
+}
+th.job {
+    width: 600px;
+    padding : 10px;
+}
+td {
+    padding : 10px;
+}

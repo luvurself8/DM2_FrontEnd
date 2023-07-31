@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="world">Hello, World!</h1>
+    <h1 id="hello">Hello, <span style="color:red;">W</span>orld!</h1>
+    <h1 class="world">Hello, World!</h1>
+
+    <h2 id="myh2"></h2>
+
+    <script>
+        let hello = document.getElementById("hello"); // 엘리먼트를 get 해가지고 옴
+        console.log(hello);
+
+        let helloData = hello.innerText;
+        // 내부 글자(text)를 추출해서 가져옴(내부 태그는 뽑지 못함)
+        // Read도 가능(=의 오른쪽)하고, Write(=의 왼쪽)
+        console.log(helloData);
+
+        let helloTag = hello.innerHTML;
+        console.log(helloTag);
+
+        // Write 하기
+        let data = '오늘은 <span style="color:blue;">월요일</span>입니다.';
+        let myh2 = document.getElementById("myh2");
+        //myh2.innerText = data;    // 문자열안에 포함된 태그를 해석하지 않는다.
+        myh2.innerHTML = data;      // 태그를 해석함
+
+
+        //------------------------------
+        let clsName = document.getElementsByClassName("world");
+        console.log(typeof clsName);  // 배열 
+        console.log(clsName.length);
+        console.log(clsName[0])
+
+        //------------------------------
+        let tags = document.getElementsByTagName("h1");
+        console.log(typeof tags);
+        console.log(tags.length);
+        console.log(tags[0]);
+    </script>
+</body>
+
+</html>

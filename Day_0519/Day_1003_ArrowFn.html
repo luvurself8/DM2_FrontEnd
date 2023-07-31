@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h2>화살표 함수 사용하기</h2>
+    <p>
+        * 화살표 함수는 ES6에서 추가된 문법이다.<br>
+        * arguments, this를 사용할 수 없다.<br>
+        * call, apply, bind를 사용할 수 없다. <br>
+        * 참고: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+    </p>
+    <script>
+        let myFunc = function () {
+            console.log('일반함수');
+        };
+        myFunc()
+
+        // ** 첫 번째 타입의 화살표 함수
+        // 1) function 키워드를 지운다.
+        // 2) )과  {사이에 화살표를 넣는다.
+        let arrFunc1 = () => { console.log('화살표 함수'); return 12 * 4; };
+        console.log(typeof arrFunc1);
+
+        // 3) arrFunc1 호출하기
+        arrFunc1();
+
+        // 4) 반환값을 받으려면?
+        let data = arrFunc1();
+        console.log(data);
+
+        // ** 두 번째 타입의 화살표 함수
+        // 실행문이 return 밖에 없으면 return을 생략하고 식만 남겨놓을 수 있다.
+        // 식만 있을 경우 {} 생략해야 한다.
+        let arrFunc2 = () => 15 * 4;
+        let data2 = arrFunc2();
+        console.log(data2);
+
+        // ** 세 번째 타입의 화살표 함수
+        // 전달인자가 있는 경우
+        let arrFunc3 = (a, b) => a * b;
+        let data3 = arrFunc3(2, 3);
+        console.log(data3);
+
+        // ** 네 번째 타입의 화살표 함수
+        // 전달인자가 하나만 있는 경우
+        let arrFunc4 = (a) => a * 2;
+        let data4 = arrFunc4(5);
+        console.log(data4);
+
+        // ** 다섯 번째 타입의 화살표 함수
+        // 전달인자가 하나 있는 경우 괄호 생략가능
+        let arrFunc5 = a => a * 4;
+        let data5 = arrFunc5(7);
+        console.log(data5);
+    </script>
+</body>
+
+</html>

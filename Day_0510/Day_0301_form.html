@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 관련 태그</title>
+
+    <style>
+        .container {
+            width: 800px;
+            margin: 0 auto;
+            background-color: aquamarine;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            margin: 10px;
+            height: auto;
+        }
+
+        input[type=text],
+        input[type=password] {
+            width: 250px;
+            height: 20px;
+        }
+
+        input#address {
+            width: 300px;
+        }
+
+        textarea {
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>데이터 전송하기(GET)</h2>
+        <form action="" method="POST" enctype="multipart/form-data">
+            <label for="userid">아이디: </label>
+            <input type="text" name="userid" id="userid" placeholder="아이디를 3~5자 이내로"><br>
+
+            <label for="userpwd">비밀번호: </label>
+            <input type="password" name="userpwd" id="userpwd" placeholder="대소문자, 특수문자, 숫자포함 5~10"><br>
+
+            <label for="username">이름: </label>
+            <input type="text" name="username" id="username"><br>
+
+            <label for="gender">성별: </label>
+            <input type="radio" name="gender" value="여자" checked> 여자
+            <input type="radio" name="gender" value="남자"> 남자
+            <br>
+
+            <label for="hobby">취미:</label>
+            <input type="checkbox" name="hobby" value="달리기">달리기
+            <input type="checkbox" name="hobby" value="농구">농구
+            <input type="checkbox" name="hobby" value="그리기">그리기
+            <input type="checkbox" name="hobby" value="낚시">낚시
+            <input type="checkbox" name="hobby" value="베이킹">베이킹
+            <br>
+
+            <label for="phone">전화번호</label>
+            <select name="location">
+                <option>02</option>
+                <option>031</option>
+                <option selected="selected">064</option>
+                <option>051</option>
+                <option>033</option>
+            </select>
+            <input type="number" name="phone1"> -
+            <input type="number" name="phone2">
+            <br>
+
+            <label for="color">좋아하는 색상: </label>
+            <input type="color" name="yourcolor" id="color"><br>
+            <input type="hidden" value="숨겨진값" name="hiddenValue"> <!-- 서버에 보내는 데이터가 사용자에게 보이지 않는다.-->
+
+            <label for="picture">사진첨부: </label>
+            <input type="file" name="picture" id="picture"><br>
+
+            <label for="city">지역구</label>
+            <select name="city" id="city">
+                <optgroup label="서울시">
+                    <option>양천구</option>
+                    <option>동작구</option>
+                    <option>강남구</option>
+                </optgroup>
+                <optgroup label="부산시">
+                    <option>해운대구</option>
+                    <option>동래구</option>
+                    <option>부산진구</option>
+                </optgroup>
+                <optgroup label="제주도">
+                    <option>서귀포시</option>
+                    <option>제주시</option>
+                </optgroup>
+            </select>
+
+            <label for="address">나머지 주소: </label>
+            <input type="text" id="address" name="address">
+            <br>
+            <label for="intro">자기소개: </label>
+            <textarea name="intro" id="intro" cols="80" rows="10"></textarea>
+            <br><br>
+
+            <input type="submit" value="가입하기">
+            <input type="reset" value="다시쓰기">
+            <input type="button" value="버튼껍데기">
+            <button>그냥 버튼</button>
+            <input type="image" src="./images/forward.png">
+        </form>
+    </div>
+</body>
+
+</html>

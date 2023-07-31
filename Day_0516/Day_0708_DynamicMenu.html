@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.wrapper {
+            width: 700px;
+            height: 50px;
+            background-color: cornflowerblue;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul>li {
+            float: left;
+            width: 20%;
+            text-align: center;
+        }
+
+        a {
+            display: inline-block;
+            width: 100%;
+            padding-top: 12px;
+            height: 38px;
+            text-decoration: none;
+            color: black;
+        }
+
+        a:hover {
+            color: white;
+            background-color: blueviolet;
+        }
+
+        div.target {
+            clear: both;
+            padding-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>
+        <input type="text" id="data">
+        <input type="button" id="btn" value="바꿔!">
+    </h2>
+    <div class="wrapper">
+
+        <ul>
+            <li><a href="#">1번 그림</a></li>
+            <li><a href="#">2번 그림</a></li>
+            <li><a href="#">3번 그림</a></li>
+            <li><a href="#">4번 그림</a></li>
+            <li><a href="#">5번 그림</a></li>
+        </ul>
+        <div class="target">
+            <img src="./images/1.png" alt="그림">
+        </div>
+    </div>
+
+    <script>
+        // 버튼 관련 이벤트 처리
+        document.getElementById("btn").addEventListener('click', function () {
+            let data = document.getElementById("data").value;
+            document.getElementsByTagName("img")[0].setAttribute("src", data);
+        })
+
+        // 이벤트 소스 5개를 문서에서 가져옴
+        let anchor = document.getElementsByTagName('a'); // anchor는 배열임
+        for (let item of anchor) {
+            item.addEventListener('mouseenter', change);
+        }
+
+        function change() {
+            let imgName = ["images/1.png", "images/2.png", "images/3.png", "images/4.png", "images/5.png"];
+            // let target = this;  // this : 이벤트 소스 그 자체 (a 태그 5개 중 한 개)
+            let i = 0;
+
+            switch (this.innerText) {
+                case "1번 그림": i = 0; break;
+                case "2번 그림": i = 1; break;
+                case "3번 그림": i = 2; break;
+                case "4번 그림": i = 3; break;
+                case "5번 그림": i = 4; break;
+            }
+            let mytag = `<img src="${imgName[i]}" alt='그림'>`;
+            document.getElementsByClassName("target")[0].innerHTML = mytag;
+            // let myImg = imgName[i];
+            // document.getElementsByTagName("img")[0].setAttribute("src", myImg);
+
+        }
+    </script>
+</body>
+
+</html>

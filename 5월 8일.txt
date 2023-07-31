@@ -1,0 +1,83 @@
+5월 8일
+
+1) 웹(Web)을 구성하는 3가지 요소
+   - HTML(Hyper Text Markup Language): 구조 담당
+	  	html 5 버전
+   - CSS(Cascading Style Sheet): 표현 담당 (꾸미기)
+		css 3
+   - Javascript: Interactive한 역할 담당 - React.js, Node.js, Tensorflow.js
+
+2) 개발환경 설정
+	- Visual Studio Code : Extension 설치
+
+3) Extension
+	- Auto Close
+	- Material Icon Theme
+	- Auto Rename Tag
+	- Github Theme
+	- Live Server
+	- JavaScript code snippets
+
+4) 설정
+  - 글꼴   : Settings - [User] 탭 선택 - Text Editor - Font ==> 사용할 폰트 설정
+  - 인덴트 : Settings - [User] 탭 선택 - Text Editor - Formatting 
+            ==> Format On Paste 체크(복붙 시 자동정렬), 
+            ==> Format On Save 체크 (저장 시 자동정렬), 
+            ==> Format On Type 체크 (엔터 시 자동정렬), 
+
+*** HTML 문서 작성 (구조)
+<!DOCTYPE html>  
+<html lang="ko"> 
+  <head>
+		<meta charset="UTF-8">
+		<title>문서의 제목 지정</title>
+		<style></style>
+		<script></script>
+  </head>
+
+  <body>
+		<h1>Web Front end</h1>
+  </body>
+</html> 
+
+*** 태그(Tag)
+- 대소문자를 가리지 않는다. (소문자로)
+- 확장자를 반드시 .html로 작성한다.
+- 속성(attribute)을 지정할 수 있다.
+  속성은 시작태그에 지정
+  속성을 여러 개 지정 가능.
+  속성은 필수속성, 선택속성
+  속성명="속성값" 의 형태로 사용
+- 태그는 
+  시작태그와 끝태그 쌍으로 구성된 경우도 있지만,
+  싱글태그도 있다.
+- 태그는 
+  1) block 태그 : 라인 전체를 자신의 영역으로 사용
+     (폭, 높이가 있다. -> CSS를 이용해 폭, 높이를 조정할 수 있다.)
+
+  2) inline 태그 : 콘텐츠 영역만 자신의 영역으로 사용
+     (폭, 높이를 갖지 않는다 
+     -> 폭과 높이를 주려면 inline 속성을 block 속성으로 바꿔야 한다.)
+
+
+*** 텍스트 관련 태그
+1) Head Line 태그
+   <hn> : 1~6까지 지정가능
+   화면에 글자의 크기를 조정하기 위한 용도로 사용하지 말 것.
+
+2) p태그 : 문단을 나타내는 태그
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

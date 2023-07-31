@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness</title>
+    <style>
+        div.container {
+            width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        table {
+            width: 650px
+        }
+
+        table,
+        td,
+        th {
+            border: 1px dotted gray;
+            border-collapse: collapse;
+        }
+
+        table th.title {
+            width: 200px;
+            background-color: lightblue;
+        }
+
+        table td {
+            padding-left: 10px;
+        }
+
+        th,
+        td {
+            height: 50px;
+        }
+
+        input[type=text] {
+            margin-left: -120px;
+            width: 300px;
+            height: 25px;
+        }
+
+        input#choice {
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>Fitness</h2>
+        <form action="">
+            <table>
+
+                <tr>
+                    <th class="title"><label for="userid">아이디</label></th>
+                    <td><input type="text" id="userid"></td>
+                </tr>
+                <tr>
+                    <th class="title"><label for="username">이름</label></th>
+                    <td><input type="text" id="username"></td>
+                </tr>
+                <tr>
+                    <th class="title"><label for="height">키(cm)</label></th>
+                    <td><input type="text" id="height"></td>
+                </tr>
+                <tr>
+                    <th class="title"><label for="weight">몸무게(kg)</label></th>
+                    <td><input type="text" id="weight"></td>
+                </tr>
+                <tr>
+                    <th class="title"><label for="bmi">BMI</label></th>
+                    <td><input type="text" id="bmi" readonly></td>
+                </tr>
+                <tr>
+                    <td colspan="2" id="choice"><input type="button" id="btn" value="계산하기"></td>
+                </tr>
+            </table>
+
+        </form>
+
+
+    </div>
+    <script>
+        let btn = document.getElementById("btn");   // 동적 타이핑
+        btn.addEventListener('click', function () {
+            let userid = document.getElementById("userid").value;
+            let username = document.getElementById("username").value;
+            let height = document.getElementById("height").value;
+            let weight = document.getElementById("weight").value;
+            let bmi = weight / (height * height * 0.0001);
+
+            document.getElementById("bmi").value = bmi;
+            console.log(userid);
+            console.log(username);
+        });
+    </script>
+</body>
+
+</html>

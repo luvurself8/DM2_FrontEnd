@@ -1,0 +1,42 @@
+5월 16일
+
+문서안에 
+<a href="http://www.naver.com" target="mywin" title="네이버로 이동함">
+네<span style="color:red">이</span>버
+</a>
+
+태그가 있을 때
+
+1) "네이버"를 글자만 가져오려면??
+   let name = document.getElementsByTagName("a")[0].innerText;
+
+2) "네이버"를 글자와 span도 가져오려면??
+   let name = document.getElementsByTagName("a")[0].innerHTML;
+
+3) href 안의 도메인을 가져오려면?? (사작태그에 있는 속성값)
+   let h = document.getElementsByTagName("a")[0].getAttribute("href");
+  
+4) href 의 속성값을 http://www.nate.com으로 바꾸려면
+   document.getElementsByTagName("a")[0].setAttribute("href", "http://www.nate.com"); 
+
+
+*** 입력창이 있을 때
+<input type="text" name="username" id="username">
+
+1) 사용자가 입력한 값을 가져올 때
+let name = document.getElementById("username").value;
+console.log(typeof name);  // string
+
+2) 사용자의 입력창에 데이터를 넣을 때
+let value = 85;
+document.getElementById("username").value = value;
+
+
+
+
+
+
+
+
+
+

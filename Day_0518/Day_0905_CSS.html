@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .myStyle {
+        background-color: coral;
+        padding: 16px;
+    }
+
+    .yourStyle {
+        color: blueviolet;
+    }
+</style>
+
+<body>
+    <h1>The DOMToken Object</h1>
+    <h2>The add() Method</h2>
+
+    <button onclick="myFunction()">Add</button>
+    <button onclick="removeFunc()">Remove</button>
+    <button onclick="toggleFunc()">Toggle</button>
+    <p>버튼을 클릭하면 스타일이 적용됩니다.</p>
+
+    <div id="myDIV" class="yourStyle">
+        <p>myDIV 입니다.</p>
+    </div>
+
+    <script>
+        function myFunction() {
+            const list = document.getElementById("myDIV").classList;
+            console.log('적용되어 있는 스타일 목록: ' + list);
+            list.add("myStyle");
+        }
+
+        function removeFunc() {
+            const list = document.getElementById("myDIV").classList;
+            console.log('적용되어 있는 스타일 목록: ' + list);
+            list.remove("myStyle");
+        }
+
+        function toggleFunc() {
+            const list = document.getElementById("myDIV").classList;
+            list.toggle("myStyle");
+        }
+    </script>
+
+</body>
+
+</html>

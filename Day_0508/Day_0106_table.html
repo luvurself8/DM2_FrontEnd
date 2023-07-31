@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블(표) 작성</title>
+    <style>
+        .name {
+            width: 100px;
+            text-align: center;
+        }
+
+        .phone {
+            width: 150px;
+            text-align: center;
+        }
+
+        .addr {
+            width: 300px;
+        }
+
+        tr:hover {
+            background-color: pink;
+            cursor: pointer;
+        }
+
+        table {
+            width: 600px;
+        }
+        table > caption {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <h2>표 작성</h2>
+
+    <table border="1">
+        <tr id="mytable">
+            <th class="name">이름</th>
+            <th class="phone">전화번호</th>
+            <th class="addr">주소</th>
+        </tr>
+        <tr>
+            <td class="name">홍길동</td>
+            <td class="phone">010-1111-2222</td>
+            <td>서울시 양천구</td>
+        </tr>
+        <tr>
+
+            <td class="name">손오공</td>
+            <td class="phone">010-2222-3333</td>
+            <td>서울시 강남구 역삼동 159번지</td>
+        </tr>
+        <tr>
+            <td class="name">저팔계</td>
+            <td class="phone">010-3333-3333</td>
+            <td>서울시 동작구 사당동</td>
+        </tr>
+    </table>
+    <br>
+    <hr>
+    <h2>셀 합치기</h2>
+    <table border="1">
+        <caption>셀 합치기 연습</caption>
+        <thead>
+            <tr>
+                <th>날짜</th>
+                <th>제목1</th>
+                <th>제목2</th>
+                <th colspan="2">제목3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1월 1일</td>
+                <td>하나</td>
+                <td rowspan="2">둘</td>
+                <td>셋</td>
+                <td>넷</td>
+            </tr>
+            <tr>
+                <td>1월 2일</td>
+                <td>다섯</td>
+                <td>여섯</td>
+                <td>일곱</td>
+            </tr>
+            <tr>
+                <td>1월 3일</td>
+                <td colspan="4">여덟</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

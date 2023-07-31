@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팝업창</title>
+</head>
+
+<body>
+    <h2>공지사항</h2>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem ducimus repellendus deleniti voluptatum eaque
+        doloremque, accusamus ratione dolor! At tenetur facilis deserunt asperiores! Quas nam architecto itaque quisquam
+        aliquam nobis.</p>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem ducimus repellendus deleniti voluptatum eaque
+        doloremque, accusamus ratione dolor! At tenetur facilis deserunt asperiores! Quas nam architecto itaque quisquam
+        aliquam nobis.</p>
+    <p>
+        <label for="opinion"> 당신의 의견을 남겨주세요.
+            <input type="text" id="opinion">
+        </label>
+    </p><br>
+
+    <p>
+        <input type="checkbox" id="view">오늘은 더이상 보지않기
+        <input type="button" id="close" value="닫기">
+    </p>
+    <script>
+        document.getElementById('close').addEventListener('click', function () {
+            let opinion = document.getElementById("opinion").value;
+            window.opener.document.getElementById("target").innerHTML = opinion;
+            window.close();
+        });
+    </script>
+</body>
+
+</html>

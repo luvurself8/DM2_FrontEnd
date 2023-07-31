@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 변수 선언방법 : let, const, var
+        // let은 같은 변수명으로 두 번 선언불가, var는 같은 변수명으로 두번 선언 가능 => 그래서 없어짐
+        // 특정 블럭 {} 속하지 않으면 전역변수
+        let data = "hello";
+        console.log(data);
+
+        data = "world";  // 중복되게 선언불가
+
+        // var 사용하기(앞으로 쓰는 사람은 나쁜사람!)
+        var age = 25;
+        var age = "이십오";
+
+        // const : 변수의 값을 바꿀 수 없다.
+        const value = 20;
+        // value = 25; // 오류(TypeError)
+        console.log(value);
+
+        const ary = [1, 2, 3, 4, 5]; // 참조
+        // ary = [10, 11, 12, 13];   // error
+
+        ary[1] = 100;                // 가능
+        console.log(ary);
+
+        name = "홍길동"; // 선언 없이 사용하지 말 것
+        console.log(name);
+    </script>
+</body>
+
+</html>
