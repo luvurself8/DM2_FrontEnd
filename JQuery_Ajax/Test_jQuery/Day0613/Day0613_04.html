@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>remove() / empty()</title>
+    <style>
+        img {
+            padding: 5px;
+            background: #888;
+        }
+
+        img.type1 {
+            background-color: blueviolet;
+        }
+
+        img.type2 {
+            background-color: rgb(240, 61, 189);
+        }
+
+        img.type3 {
+            background-color: rgb(213, 228, 54);
+        }
+
+        img.type4 {
+            background-color: rgb(183, 156, 230);
+        }
+
+        img.type5 {
+            background-color: rgb(59, 243, 59);
+        }
+    </style>
+
+    <script src="../script/jquery-3.7.0.min.js"></script>
+    <script>
+        $(function () {
+            $('img').click(function () {
+                let n = Math.ceil(Math.random() * 5);
+                let existClass = $(this).attr('class');
+                $(this).removeClass(existClass).addClass("type" + n);
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <h2> remove() / empty() </h2>
+    <ul>
+        <li>스타일의 클래스 적용/삭제</li>
+        <li>addClass(): 스타일(클래스)를 적용</li>
+        <li>removeClass(): 스타일(클래스)를 삭제</li>
+    </ul>
+
+    <div class="container">
+        <img src="../images/dog1.png" alt="">
+        <img src="../images/dog2.png" alt="">
+        <img src="../images/dog3.png" alt="">
+        <img src="../images/dog4.png" alt="">
+        <img src="../images/dog5.png" alt="">
+    </div>
+</body>
+
+</html>

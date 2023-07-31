@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>DB 연동작업</title>
+<script th:src="@{/jquery-3.7.0.min.js}"></script>
+<script>
+	$(function(){
+		$.ajax({
+			url: 'retrieveAll'
+			, method: 'GET'
+			, success : init
+		});
+		
+		$("#send").on('click', send);
+	});
+	
+	function send() {
+		let name = $("#name").val();
+		let phone = $("#phone").val();
+		let address = $("#address").val();
+		
+		let sendData = {"name": name, "phone": phone, "address":address};
+		
+		$.ajax({
+			url : 'friendRegist'
+			, method: 'POST'
+			, data : sendData
+			, success : init 
+		});
+	}
+	
+	// 처리 결과 출력 (테이블로 생성한 후 #result )
+	function init(resp) {
+		let tag = `<table border="1">
+			<tr>
+				<th>번호<th>이름</th><th>전화번호</th><th>주소</th><th>비고</th>
+			</tr>`;
+		
+		$.each(resp, function(idx, item) {
+			tag += `<tr>
+				<td>${(idx+1)}</td>
+				<td>${item["name"]}</td>
+				<td>${item["phone"]}</td>
+				<td>${item["address"]}</td>
+				<td>
+					<input type="button" class="delete" value="삭제">
+					<input type="button" class="modify" value="수정">
+				</td>
+			</tr>`
+		});
+		
+		
+		tag += `</table>`;
+		$("#result").html(tag);
+	}
+</script>
+</head>
+<body>
+	<h2>[ DB와 연동한 Ajax ]</h2>
+	<div>
+		<label>이름 : <input type="text" id="name"></label>&nbsp;
+		<label>전화번호 : <input type="text" id="phone"></label>&nbsp;
+		<label>주소 : <input type="text" id="address"></label>&nbsp;
+		<input type="button" id="send" value="저장">
+	</div>
+	<br>
+	<div id="result"></div>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <style>
+        table {
+            width: 900px;
+        }
+    </style>
+    <script src="../script/jquery-3.7.0.min.js"></script>
+    <script>
+        $(function () {
+            // 전체삭제 버튼을 클릭하면 체크박스에 체크가 되어 있는 요소를 찾아
+            // 그 체크박스의 부모 중 tr을 찾아 삭제(remove)
+            $("#delete").on('click', function () {
+                let allChebx = $('div.table2 table tbody td input[type="checkbox"]');
+
+                allChebx.each(function () {
+                    if ($(this).is(":checked")) {
+                        $(this).parents("tr").remove();
+                    }
+                });
+                $("#allSelect").prop('checked', false);
+            });
+
+            // 체크 상자의 상태를 확인하여 나머지 체크상자의 상태변환
+            $("#allSelect").on('change', function () {
+                let allChebx = $('div.table2 table tbody td input[type="checkbox"]');
+
+                if ($(this).is(':checked')) {
+                    allChebx.prop('checked', true);
+                } else {
+                    allChebx.prop('checked', false);
+                }
+            });
+
+            // 입력된 내용을 테이블로 추가
+            $("#add").on('click', function () {
+                let username = $("#username").val();
+                let phone = $("#phone").val();
+                let address = $("#address").val();
+
+                let myTag = createTag(username, phone, address);
+                $("div.table2 table tbody").append(myTag);
+                cleanUp()
+            });
+        });
+        function cleanUp() {
+            $("#username").val('');
+            $("#phone").val('');
+            $("#address").val('');
+        }
+        function createTag(username, phone, address) {
+            let tag = `<tr>
+                <td><input type="checkbox"></td>
+                <td>${username}</td>
+                <td>${phone}</td>
+                <td>${address}</td>
+            </tr>`
+            return tag;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div>
+            <label>이름 : <input type="text" id="username"></label>
+            <label>전화번호 : <input type="text" id="phone"> </label>
+            <label>주소 : <input type="text" id="address"></label>
+            <input type="button" id="add" value="추가">
+        </div>
+        <hr>
+        <p><input type="button" id="delete" value="전체 삭제"></p>
+
+        <div class="table2">
+            <table border="1">
+                <tr>
+                    <th><input id="allSelect" type="checkbox"></th>
+                    <th>이름</th>
+                    <th>전화번호</th>
+                    <th style="width:400px;">주소</th>
+                </tr>
+            </table>
+        </div> <!-- .table2 끝 -->
+    </div> <!-- .wrapper 끝 -->
+</body>
+
+</html>

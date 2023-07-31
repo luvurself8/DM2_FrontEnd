@@ -1,0 +1,41 @@
+<!-- 어제 공부한 7번 파일과 같이 공부-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter()</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            float: left;
+            border: 2px solid blue;
+        }
+    </style>
+
+    <script src="../script/jquery-3.7.0.min.js"></script>
+    <script>
+        // 메소드 체이닝
+        $(function () {
+            let lengs = $("div").css("background-color", "skyblue")
+                .filter(".item").css("border", "3px solid red").end()
+                .not(".item").css("background-color", "gold");
+        })
+    </script>
+</head>
+
+<body>
+    <h2> filter() / not() </h2>
+    <div></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div></div>
+
+</body>
+
+</html>

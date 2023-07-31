@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+
+    <script src="../script/jquery-3.7.0.min.js"></script>
+    <script>
+        $(function () {
+            // $('td:nth-child(3n+1)').css('background-color', 'pink');
+            // $('td:nth-child(3n+2)').css('background-color', 'yellow');
+            // $('td:nth-child(3n+3)').css('background-color', 'cyan');
+            $('tr:nth-child(2n)').css('background-color', '#eee');
+            $('tr:nth-child(2n+1)').css({ 'background-color': 'black', 'color': 'white' });
+        });
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>이름</th>
+            <th>전화번호</th>
+            <th>주소</th>
+        </tr>
+        <tr>
+            <td>홍길동</td>
+            <td>010-1234-5678</td>
+            <td>서울시 강남구 삼성동 코엑스 4층</td>
+        </tr>
+        <tr>
+            <td>임꺽정</td>
+            <td>010-1234-5678</td>
+            <td>제주시 한림읍</td>
+        </tr>
+
+        <tr>
+            <td>손오공</td>
+            <td>010-0000-0101</td>
+            <td>부산시 해운대구</td>
+        </tr>
+
+        <tr>
+            <td>사오정</td>
+            <td>010-2323-4545</td>
+            <td>미국 워싱턴 </td>
+        </tr>
+
+        <tr>
+            <td>저팔계</td>
+            <td>010-0258-5678</td>
+            <td>일본 도쿄시</td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>

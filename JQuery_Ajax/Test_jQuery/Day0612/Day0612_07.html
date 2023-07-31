@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.item1,
+        div.item2,
+        div.item3 {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            margin: 5px;
+            float: left;
+        }
+
+        div.first,
+        div.second,
+        div.third {
+            clear: both;
+        }
+    </style>
+    <script src="../script/jquery-3.7.0.min.js"></script>
+    <script>
+        $(function () {
+            let len = $('div').length;   // 21개
+            $('div.item1').eq(2).css({ 'background': 'orange', 'border': '2px dotted red' });
+            $('div.item2:nth-child(2n)').css({ 'background': 'gold' });
+            $('div.item2').not(':nth-child(2n)').css({ 'background': 'silver' });
+
+            // each() : 선택된 요소룰 반복
+            $('div.item3').each(function (idx, item) {
+                // console.log(idx + " : " + item);
+                if ($(this).is('.choice')) {
+                    $(this).css('background', 'green');
+                }
+            });
+        });      
+    </script>
+</head>
+
+<body>
+    <h2>[ eq(), not(), is() ]</h2>
+    <div class="first">
+        <div class="item1"></div>
+        <div class="item1"></div>
+        <div class="item1"></div>
+        <div class="item1"></div>
+        <div class="item1"></div>
+        <div class="item1"></div>
+    </div>
+    <div class="second">
+        <div class="item2"></div>
+        <div class="item2"></div>
+        <div class="item2"></div>
+        <div class="item2"></div>
+        <div class="item2"></div>
+        <div class="item2"></div>
+    </div>
+    <div class="third">
+        <div class="item3"></div>
+        <div class="item3 choice"></div>
+        <div class="item3"></div>
+        <div class="item3"></div>
+        <div class="item3 choice"></div>
+        <div class="item3 choice"></div>
+    </div>
+</body>
+
+</html>

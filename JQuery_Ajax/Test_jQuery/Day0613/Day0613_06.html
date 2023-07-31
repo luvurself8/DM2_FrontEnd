@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter()</title>
+    <script src="../script/jquery-3.7.0.min.js"></script>
+    <script>
+        $(function () {
+            $("li").find("b").css({ 'font-size': '1.5em', 'color': 'red' });
+            $("ul").children("#item").text("둘이 아니고 Two에요");
+            $("b").parent().css('background-color', 'yellow');
+            $("li > i").parents("ul").css('background-color', 'pink');
+            $("li").eq(0).next().css({ 'font-size': '2em', 'color': 'blue' });
+        })
+    </script>
+</head>
+
+<body>
+    <h2>Traversing 관련 메소드</h2>
+    <ul>
+        <li><b>하나</b></li>
+        <li id="item">둘</li>
+        <li><i>셋</i></li>
+        <li>넷</li>
+        <li>다섯</li>
+    </ul>
+</body>
+
+</html>

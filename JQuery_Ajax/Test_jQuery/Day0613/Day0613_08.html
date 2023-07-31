@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>attr() / is() / prop()</title>
+    <script src="../script/jquery-3.7.0.min.js"></script>
+    <script src="../script/jquery-ui.min.js"></script>
+    <script>
+        $(function () {
+            $("#show").on('click', function () {
+                $("img").show(1000, 'easeOutBounce');
+            });
+            $("#hide").on('click', function () {
+                $("img").hide(1000, 'easeOutBounce');
+            });
+            $("#fadein").on('click', function () {
+                $("img").fadeIn(1000, 'easeOutBounce');
+            });
+            $("#fadeout").on('click', function () {
+                $("img").fadeOut(1000, 'easeOutBounce');
+            });
+            $("#slideup").on('click', function () {
+                $("img").slideUp(1000, 'easeInElastic');
+            });
+            $("#slidedown").on('click', function () {
+                $("img").slideDown(1000, 'easeInElastic');
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <h2>간단한 Effect</h2>
+    <p>
+        <input type="button" id="hide" value="감추기">
+        <input type="button" id="show" value="보이기">
+        <input type="button" id="fadeout" value="FadeOut">
+        <input type="button" id="fadein" value="FadeIn">
+        <input type="button" id="slideup" value="SlideUp">
+        <input type="button" id="slidedown" value="SlideDown">
+    </p>
+    <p>
+        <img src="../images/pic1.png" alt="" width="200px">
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 30px;
+        }
+    </style>
+    <script src="../script/jquery-3.7.0.min.js"></script>
+    <script>
+        $(function () {
+            $('#btn').on('click', function () {
+                let data = `<div style="color:red">무궁화 꽃이 피었습니다.</div>`;
+                // $('#result').text(data); 
+                // $('#result').html(data);
+
+            });
+
+            $('#btn2').on('click', fetchImg);
+            //setInterval(fetchImg, 500);
+
+            $('#btn3').on('click', fetchImg3);
+            $('#btn3_1').on('click', fetchImg3_1);
+
+            $('#btn4').on('click', fetchImg4);
+        });
+
+        function fetchImg() {
+            let n = Math.ceil(Math.random() * 6);
+            let fileName = `<img src="../images/pic${n}.png" alt="">`;
+            $("#target").html(fileName);
+        }
+
+        function fetchImg3() {
+            let n = Math.ceil(Math.random() * 6);
+            let fileName = `<img src="../images/pic${n}.png" alt="">`;
+            $("#target3").append(fileName);
+            // $(fileName).appendTo("#target3");
+        }
+        function fetchImg3_1() {
+            let data = $("#target3").html();
+            $("#target3").before(data);
+        }
+
+        function fetchImg4() {
+            let n = Math.ceil(Math.random() * 6);
+            let fileName = `<img src="../images/pic${n}.png" alt="">`;
+            $("#target4").prepend(fileName);
+        }
+    </script>
+</head>
+
+<body>
+    <h2>[이벤트]</h2>
+    <input type="button" id="btn" value="클릭하시오"><br>
+    <p id="result">
+        여기에 문자열이 들어옴!
+    </p>
+
+    <input type="button" id="btn2" value="클릭하시오"><br>
+    <p id="target">
+        <img src="../images/pic1.png" alt="">
+    </p>
+
+    <input type="button" id="btn3" value="클릭(append)">
+    <input type="button" id="btn3_1" value="??">
+    <br>
+    <p id="target3">
+        <img src="../images/pic1.png" alt="">
+    </p>
+
+    <input type="button" id="btn4" value="클릭(prepend)"><br>
+    <p id="target4">
+        <img src="../images/pic1.png" alt="">
+    </p>
+</body>
+
+</html>
